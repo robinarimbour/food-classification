@@ -1,0 +1,4 @@
+food,protein,total_fat,carbohydrate,energy,fiber,potassium,sodium,cholesterol,trans_fat,saturated_fat,sugars,category_id
+Apple,0.3,0.2,14,52,2.4,107,1,0,0,0.03,10
+Peanut Butter,25,50,20,588,6,649,17,0,0,10,9
+Snickers Bar,4.3,23,61,488,2,187,178,5,0.1,8.5,51

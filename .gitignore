@@ -1,0 +1,14 @@
+# --- Byte-compiled / optimized / DLL files ---
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Virtual environment
+foodenv/
+
+# Environment variables
+.env
+
+# Others
+dev/
+archives/
