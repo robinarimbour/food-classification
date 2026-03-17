@@ -84,9 +84,9 @@ A **Streamlit web application** is included to allow users to input nutritional 
 
 ## Limitations
 
-- **Missing FVLN Percentage**  
-  The official Nutri-Score algorithm uses the percentage of **Fruits, Vegetables, Legumes, and Nuts (FVLN%)** to assign positive points.  
-  This dataset did not contain FVLN%, so the **food category was used as an approximation**, which may not accurately represent the actual composition of the product.
+- **Missing FVNL Percentage**  
+  The official Nutri-Score algorithm uses the percentage of **Fruits, Vegetables, Nuts, and Legumes (FVNL%)** to assign positive points.  
+  This dataset did not contain FVNL%, so the **food category was used as an approximation**, which may not accurately represent the actual composition of the product.
 
 - **Cheese Rule Not Implemented**  
   Nutri-Score applies a **special scoring rule for cheese**, allowing protein points to be counted even when negative nutrient points are high.  
@@ -96,8 +96,11 @@ A **Streamlit web application** is included to allow users to input nutritional 
   Nutri-Score uses **separate scoring rules for beverages**, with different thresholds and scoring logic.  
   In this project, beverage-specific scoring was not implemented and beverage items were handled using the **machine learning model instead of Nutri-Score rules**.
 
-- **Unit Assumption (100g)**  
-  Nutritional values were assumed to be standardized **per 100 g**. Products normally reported **per 100 ml (such as beverages)** were not treated separately, which may introduce inconsistencies.
+- **Red Meat Rules Not Implemented**  
+  The Nutri-Score algorithm includes specific considerations for **red meat products** in its updated versions. These category-specific adjustments were not applied due to limited product-level classification in the dataset.
+
+- **Added Fats Rules Not Implemented**  
+  Nutri-Score applies **special scoring rules for added fats (such as oils and butter)** with different thresholds and evaluation criteria. These rules were not implemented, as the dataset did not clearly distinguish added fats from other food categories.
 
 ---
 
