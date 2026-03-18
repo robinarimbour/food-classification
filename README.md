@@ -75,7 +75,7 @@ A **Streamlit web application** is included to allow users to input nutritional 
    - Random Forest
 
 7. **Model Performance**  
-   Best accuracy achieved: Random Forest (**89.4%**)
+   Best accuracy achieved: Random Forest (**90.1%**)
 
 8. **Deployment**  
    The trained model was integrated into a **Streamlit application** for real-time food health classification.
