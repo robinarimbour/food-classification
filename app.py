@@ -5,6 +5,7 @@ import joblib
 import streamlit as st
 from PIL import Image
 import easyocr
+import cv2
 import re
 from utils import NUTRIENTS, NUTRIENT_UNITS, MODEL_FEATURES, INPUT_OPTIONS, GRADE_INFO, GRADE_EMOJI, convert_to_100g
 
@@ -74,6 +75,14 @@ def autofill_sample_food(sample_foods):
 # OCR Helper functions
 # -------------------------
 
+def preprocess_image(image):
+    img = np.array(image)
+    # Convert to grayscale
+    gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    
+    return gray
+
+
 def extract_value(pattern, text):
     match = re.search(pattern, text, re.IGNORECASE)
     if match:
@@ -83,12 +92,14 @@ def extract_value(pattern, text):
 
 def extract_nutrients_from_image(reader, image):
 
-    img_array = np.array(image)
-    results = reader.readtext(img_array)
+    processed_img = preprocess_image(image)
+    results = reader.readtext(processed_img)
 
     text = " ".join([res[1] for res in results])
 
+    serving = extract_value(r"Serving Size\s+(\d+\.?\d*)", text)
     return {
+        "serving_size": serving if serving > 0 else 100.0,
         "protein": extract_value(r"Protein\s+(\d+\.?\d*)", text),
         "total_fat": extract_value(r"Total Fat\s+(\d+\.?\d*)", text),
         "carbohydrate": extract_value(r"(?:Carbohydrate|Total Carbohydrate)\s+(\d+\.?\d*)", text),
