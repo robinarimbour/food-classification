@@ -4,7 +4,7 @@ This project predicts the **health category of food products** based on their nu
 The model was trained using the [**USDA SR Legacy Food Dataset**](https://fdc.nal.usda.gov/download-datasets/), a publicly available dataset containing standardized nutritional information for a wide variety of food products.
 The target output is derived from the [**Nutri-Score system**](https://en.wikipedia.org/wiki/Nutri-Score), which evaluates food healthiness using key nutritional factors.
 
-A **Streamlit web application** is included to allow users to input nutritional values and receive real-time predictions.
+A **Streamlit web application** is included to allow users to input nutritional values and receive real-time predictions. The application also supports **EasyOCR**-based image extraction, enabling users to upload a nutrition label image and automatically extract nutritional information for prediction.
 
 ---
 
@@ -14,6 +14,9 @@ A **Streamlit web application** is included to allow users to input nutritional 
 - Target labels based on **Nutri-Score**
 - Nutritional feature based prediction
 - Interactive **Streamlit web app**
+- Dual input modes:
+   - Manual entry of nutrition values
+   - Image upload with **EasyOCR**-based extraction
 - Reproducible ML workflow using Jupyter notebooks
 
 ---
@@ -25,6 +28,7 @@ A **Streamlit web application** is included to allow users to input nutritional 
 - Scikit-learn
 - Matplotlib / Seaborn
 - Streamlit
+- EasyOCR
 - Jupyter Notebook
 
 ---
@@ -78,7 +82,7 @@ A **Streamlit web application** is included to allow users to input nutritional 
    Best accuracy achieved: Random Forest (**90.1%**)
 
 8. **Deployment**  
-   The trained model was integrated into a **Streamlit application** for real-time food health classification.
+   The trained model was integrated into a **Streamlit application** for real-time food health classification. Users can also upload a nutrition label image and automatically extract nutritional information for prediction using **EasyOCR**.
 
 ---
 
